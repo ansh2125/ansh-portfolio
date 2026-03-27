@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import MagneticButton from '../common/MagneticButton';
 import { navLinks } from '../../data/portfolioData.js';
 
 // ICONS
@@ -41,19 +40,30 @@ const Navbar = () => {
                 }`}
         >
             {/* NAVBAR CONTENT */}
-            <div className="w-full max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            <div className="w-full max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
 
-                {/* LOGO */}
-                <a
-                    href="#home"
-                    onClick={(e) => {
-                        e.preventDefault();
-                        handleNavClick('#home');
-                    }}
-                    className="text-white font-bold text-lg"
-                >
-                    Ansh<span className="text-blue-400">.</span>
-                </a>
+                {/* LEFT SIDE (LOGO + HAMBURGER CLOSE GAP FIX) */}
+                <div className="flex items-center gap-2 md:gap-0">
+                    {/* LOGO */}
+                    <a
+                        href="#home"
+                        onClick={(e) => {
+                            e.preventDefault();
+                            handleNavClick('#home');
+                        }}
+                        className="text-white font-bold text-lg"
+                    >
+                        Ansh<span className="text-blue-400">.</span>
+                    </a>
+
+                    {/* MOBILE BUTTON */}
+                    <button
+                        onClick={() => setIsOpen(!isOpen)}
+                        className="md:hidden text-white ml-1"
+                    >
+                        {isOpen ? <CloseIcon /> : <MenuIcon />}
+                    </button>
+                </div>
 
                 {/* DESKTOP MENU */}
                 <div className="hidden md:flex gap-6">
@@ -85,11 +95,6 @@ const Navbar = () => {
                         Hire Me
                     </a>
                 </div>
-
-                {/* MOBILE BUTTON */}
-                <button onClick={() => setIsOpen(!isOpen)} className="md:hidden text-white">
-                    {isOpen ? <CloseIcon /> : <MenuIcon />}
-                </button>
             </div>
 
             {/* MOBILE MENU */}
