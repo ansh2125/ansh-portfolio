@@ -35,15 +35,15 @@ const Navbar = () => {
             initial={{ y: -80, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             className={`fixed top-0 left-0 w-full z-50 overflow-x-hidden transition-all duration-300 ${scrolled
-                    ? 'bg-slate-900/70 backdrop-blur-xl border-b border-slate-800'
-                    : 'bg-transparent'
+                ? 'bg-slate-900/70 backdrop-blur-xl border-b border-slate-800'
+                : 'bg-transparent'
                 }`}
         >
             {/* NAVBAR CONTENT */}
             <div className="w-full max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
 
-                {/* LEFT SIDE (LOGO + HAMBURGER CLOSE GAP FIX) */}
-                <div className="flex items-center gap-2 md:gap-0">
+                {/* LEFT (LOGO + HAMBURGER) */}
+                <div className="flex items-center gap-2">
                     {/* LOGO */}
                     <a
                         href="#home"
@@ -56,12 +56,12 @@ const Navbar = () => {
                         Ansh<span className="text-blue-400">.</span>
                     </a>
 
-                    {/* MOBILE BUTTON */}
+                    {/* HAMBURGER */}
                     <button
-                        onClick={() => setIsOpen(!isOpen)}
+                        onClick={() => setIsOpen(true)}
                         className="md:hidden text-white ml-1"
                     >
-                        {isOpen ? <CloseIcon /> : <MenuIcon />}
+                        <MenuIcon />
                     </button>
                 </div>
 
@@ -105,8 +105,17 @@ const Navbar = () => {
                         animate={{ x: 0 }}
                         exit={{ x: '100%' }}
                         transition={{ duration: 0.3 }}
-                        className="fixed top-0 right-0 w-full h-screen bg-slate-900 flex flex-col items-center justify-center space-y-6"
+                        className="fixed inset-0 z-[999] bg-slate-900 flex flex-col items-center justify-center space-y-6"
                     >
+                        {/* CLOSE BUTTON */}
+                        <button
+                            onClick={() => setIsOpen(false)}
+                            className="absolute top-6 right-6 text-white z-[1000]"
+                        >
+                            <CloseIcon />
+                        </button>
+
+                        {/* NAV LINKS */}
                         {navLinks.map((link) => (
                             <a
                                 key={link.name}
@@ -121,6 +130,7 @@ const Navbar = () => {
                             </a>
                         ))}
 
+                        {/* CTA */}
                         <a
                             href="#contact"
                             onClick={(e) => {
