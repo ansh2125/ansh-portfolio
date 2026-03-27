@@ -5,7 +5,7 @@ import Button from '../common/Button';
 import MagneticButton from '../common/MagneticButton';
 import { AnimatedLetters, TypewriterText } from '../common/AnimatedText';
 
-// ================= ICONS =================
+// ICONS
 const GithubIcon = () => <span>🐙</span>;
 const LinkedInIcon = () => <span>💼</span>;
 const MailIcon = () => <span>✉️</span>;
@@ -28,15 +28,19 @@ const Hero = () => {
     ];
 
     return (
-        <section id="home" className="min-h-screen flex items-center justify-center bg-slate-950 relative overflow-hidden pt-20">
+        <section
+            id="home"
+            className="min-h-screen w-full flex items-center justify-center bg-slate-950 relative overflow-hidden overflow-x-hidden pt-20"
+        >
 
-            {/* 🔥 Background Glow */}
-            <div className="absolute inset-0 -z-10">
-                <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-blue-500/10 blur-3xl rounded-full"></div>
-                <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-purple-500/10 blur-3xl rounded-full"></div>
+            {/* 🔥 Background Glow FIXED */}
+            <div className="absolute inset-0 -z-10 overflow-hidden">
+                <div className="absolute top-0 left-0 w-[280px] md:w-[500px] h-[280px] md:h-[500px] bg-blue-500/10 blur-3xl rounded-full"></div>
+                <div className="absolute bottom-0 right-0 w-[280px] md:w-[500px] h-[280px] md:h-[500px] bg-purple-500/10 blur-3xl rounded-full"></div>
             </div>
 
-            <div className="container-custom grid lg:grid-cols-2 gap-12 items-center">
+            {/* CONTENT */}
+            <div className="max-w-7xl w-full mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
 
                 {/* LEFT */}
                 <div className="text-center lg:text-left">
@@ -64,7 +68,7 @@ const Hero = () => {
                     </p>
 
                     {/* Description */}
-                    <p className="text-slate-400 mb-8 max-w-xl">
+                    <p className="text-slate-400 mb-8 max-w-xl mx-auto lg:mx-0">
                         I build scalable, high-performance web applications using MERN stack with modern UI & best practices.
                     </p>
 
@@ -100,22 +104,17 @@ const Hero = () => {
                 </div>
 
                 {/* RIGHT IMAGE */}
-                <div className="flex justify-center relative">
+                <div className="flex justify-center relative overflow-hidden">
 
-                    {/* Glow */}
-                    <div className="absolute w-80 h-80 bg-gradient-to-r from-blue-500 to-purple-600 blur-3xl opacity-30 rounded-full"></div>
+                    {/* Glow FIXED */}
+                    <div className="absolute w-60 md:w-80 h-60 md:h-80 bg-gradient-to-r from-blue-500 to-purple-600 blur-3xl opacity-30 rounded-full"></div>
 
                     <motion.img
                         src={personalInfo.profileImage}
                         alt="profile"
-                        className="w-72 h-72 md:w-80 md:h-80 rounded-full object-cover border-4 border-slate-800 shadow-xl relative z-10"
-                        animate={{
-                            y: [0, -15, 0],
-                        }}
-                        transition={{
-                            duration: 4,
-                            repeat: Infinity,
-                        }}
+                        className="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover border-4 border-slate-800 shadow-xl relative z-10"
+                        animate={{ y: [0, -15, 0] }}
+                        transition={{ duration: 4, repeat: Infinity }}
                         whileHover={{ scale: 1.05 }}
                     />
                 </div>

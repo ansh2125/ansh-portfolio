@@ -2,13 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ================= BASE ================= */
 @layer base {
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    max-width: 100%;
   }
 
   body {
-    @apply bg-slate-50 text-slate-800 font-sans antialiased overflow-x-hidden;
+    @apply bg-slate-50 text-slate-800 font-sans antialiased;
+    overflow-x: hidden;
+    max-width: 100%;
+    position: relative;
+  }
+
+  * {
+    box-sizing: border-box;
   }
 
   ::selection {
@@ -16,13 +26,16 @@
   }
 }
 
+/* ================= COMPONENTS ================= */
 @layer components {
+
   .section-padding {
     @apply py-16 md:py-20 lg:py-24;
   }
 
+  /* 🔥 FIXED CONTAINER (NO OVERFLOW) */
   .container-custom {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply max-w-7xl w-full mx-auto px-4;
   }
 
   .gradient-text {
@@ -42,7 +55,7 @@
   }
 }
 
-/* Custom Scrollbar */
+/* ================= SCROLLBAR ================= */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -59,12 +72,14 @@
   @apply bg-primary-600;
 }
 
-/* Page Loader Styles */
+/* ================= LOADER ================= */
 .loader-wrapper {
   @apply fixed inset-0 z-[100] flex items-center justify-center bg-slate-900;
 }
 
-/* Floating Animation */
+/* ================= ANIMATIONS ================= */
+
+/* Floating */
 @keyframes float {
 
   0%,
@@ -91,7 +106,7 @@
   animation-delay: 4s;
 }
 
-/* Gradient Animation */
+/* Gradient */
 @keyframes gradient-shift {
 
   0%,
@@ -109,7 +124,7 @@
   animation: gradient-shift 3s ease infinite;
 }
 
-/* Blob Animation */
+/* Blob */
 @keyframes blob {
 
   0%,
@@ -142,7 +157,7 @@
   animation-delay: 4s;
 }
 
-/* Glow Effect */
+/* Glow */
 .glow {
   box-shadow: 0 0 40px rgba(59, 130, 246, 0.3);
 }
@@ -151,7 +166,7 @@
   box-shadow: 0 0 60px rgba(59, 130, 246, 0.4);
 }
 
-/* Text Shimmer */
+/* Shimmer */
 @keyframes shimmer {
   0% {
     background-position: -200% center;
@@ -176,7 +191,7 @@
   animation: shimmer 3s linear infinite;
 }
 
-/* Underline Animation */
+/* Underline */
 .animated-underline {
   position: relative;
 }
