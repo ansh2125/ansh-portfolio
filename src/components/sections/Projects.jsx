@@ -77,7 +77,7 @@ const Projects = () => {
 
                 <div className="text-center mt-10">
                     <a
-                        href="https://github.com/anshshukla"
+                        href="https://github.com/ansh2125"
                         className="px-6 py-3 border border-slate-700 rounded text-white"
                     >
                         View All Projects

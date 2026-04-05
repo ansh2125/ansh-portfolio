@@ -149,16 +149,52 @@ export const certifications = [
     }
 ];
 
+// export const projects = [
+//     {
+//         id: 1,
+//         title: "Doctor Appointment System",
+//         description: "A comprehensive web application that allows users to book doctor appointments online. Features include doctor search, appointment scheduling, patient management, and real-time availability checking.",
+//         image: "https://static.vecteezy.com/system/resources/thumbnails/026/375/249/small/ai-generative-portrait-of-confident-male-doctor-in-white-coat-and-stethoscope-standing-with-arms-crossed-and-looking-at-camera-photo.jpg",
+//         icon: Stethoscope,
+//         technologies: ["React.js", "Node.js", "Express.js", "MongoDB", "Tailwind CSS"],
+//         github: "https://github.com/anshshukla/doctor-appointment",
+//         liveDemo: "https://healhub-two.vercel.app/",
+//         featured: true
+//     },
+//     {
+//         id: 2,
+//         title: "Job Portal",
+//         description: "A full-featured job portal platform where companies can post job openings and candidates can search and apply for positions. Includes resume upload, job filtering, and application tracking.",
+//         image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop",
+//         icon: Building2,
+//         technologies: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT Auth"],
+//         github: "https://github.com/anshshukla/job-portal",
+//         liveDemo: "https://job-portal-demo.vercel.app",
+//         featured: true
+//     },
+//     {
+//         id: 3,
+//         title: "Cab Service Portal",
+//         description: "A client project for booking cab services online. Features include ride booking, fare estimation, driver tracking, and payment integration for a seamless transportation experience.",
+//         image: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=600&h=400&fit=crop",
+//         icon: Car,
+//         technologies: ["React.js", "Node.js", "Express.js", "MongoDB", "Google Maps API"],
+//         github: "https://github.com/anshshukla/cab-service",
+//         liveDemo: "https://cab-service-demo.vercel.app",
+//         featured: true
+//     }
+// ];
+
 export const projects = [
     {
         id: 1,
         title: "Doctor Appointment System",
         description: "A comprehensive web application that allows users to book doctor appointments online. Features include doctor search, appointment scheduling, patient management, and real-time availability checking.",
-        image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600&h=400&fit=crop",
+        image: "https://static.vecteezy.com/system/resources/thumbnails/026/375/249/small/ai-generative-portrait-of-confident-male-doctor-in-white-coat-and-stethoscope-standing-with-arms-crossed-and-looking-at-camera-photo.jpg",
         icon: Stethoscope,
         technologies: ["React.js", "Node.js", "Express.js", "MongoDB", "Tailwind CSS"],
         github: "https://github.com/anshshukla/doctor-appointment",
-        liveDemo: "https://doctor-appointment-demo.vercel.app",
+        liveDemo: "https://healhub-two.vercel.app/",
         featured: true
     },
     {
@@ -182,8 +218,25 @@ export const projects = [
         github: "https://github.com/anshshukla/cab-service",
         liveDemo: "https://cab-service-demo.vercel.app",
         featured: true
-    }
+    },
+
+    ```
+// 🔥 NEW PROJECT ADDED
+{
+    id: 4,
+    title: "SK Auto Glow",
+    description: "A real-world client project developed for SK Auto Glow, a car detailing and service business. The platform showcases services, enables customer inquiries, and provides a modern responsive UI for better user engagement and business visibility.",
+    image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=600&h=400&fit=crop",
+    icon: Car,
+    technologies: ["React.js", "Node.js", "Express.js", "MongoDB", "Tailwind CSS"],
+    github: "", // agar private hai to empty rehne de
+    liveDemo: "https://your-live-link.com", // 🔁 apna real link daal
+    featured: true
+}
+```
+
 ];
+
 
 export const navLinks = [
     { name: "Home", href: "#home" },
